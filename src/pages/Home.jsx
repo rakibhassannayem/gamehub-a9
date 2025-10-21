@@ -1,9 +1,13 @@
-import Banner from "../components/Banner";
+import { useLoaderData } from "react-router";
+import BannerSlider from "../components/BannerSlider";
 
 const Home = () => {
+
+  const data = useLoaderData()
+
   return (
     <div>
-      <Banner></Banner>
+      <BannerSlider data={data}/>
     </div>
   );
 };

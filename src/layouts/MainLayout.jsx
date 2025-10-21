@@ -3,9 +3,11 @@ import Navbar from "../components/Navbar";
 
 const MainLayout = () => {
   return (
-    <div>
+    <div className="">
       <Navbar />
-      <Outlet />
+      <div className="container mx-auto">
+        <Outlet />
+      </div>
     </div>
   );
 };

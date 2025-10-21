@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "title": "Player Unknowns Battle Ground: PUBG",
+    "coverPhoto": "https://images.unsplash.com/photo-1564049489314-60d154ff107d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1183",
+    "category": "FPS",
+    "downloadLink": "https://www.pubgmobile.com/en-US/home.shtml",
+    "description": "PUBG Mobile is a fast-paced battle royale game where players fight for survival, strategy, and victory on dynamic maps.",
+    "ratings": 4.5,
+    "developer": "Krafton"
+  },
+  {
+    "id": "2",
+    "title": "Neon Drift",
+    "coverPhoto": "https://images.unsplash.com/photo-1696517505957-cb6b69868bb3?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1332",
+    "category": "Racing",
+    "downloadLink": "https://example.com/neon-drift",
+    "description": "A synthwave racing experience across neon cityscapes. Drift, upgrade and race.",
+    "ratings": 4.8,
+    "developer": "Lumen Studios"
+  },
+  {
+    "id": "3",
+    "title": "Citadel Siege",
+    "coverPhoto": "https://images.unsplash.com/photo-1638864835658-05d06c962187?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
+    "category": "Strategy",
+    "downloadLink": "https://example.com/citadel-siege",
+    "description": "Tactical castle defense with resource management and epic sieges.",
+    "ratings": 4.6,
+    "developer": "ForgePlay"
+  },
+  {
+    "id": "4",
+    "title": "PixelQuest",
+    "coverPhoto": "https://images.unsplash.com/photo-1613843596852-9a6317dae0b8?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1172",
+    "category": "Platformer",
+    "downloadLink": "https://example.com/pixelquest",
+    "description": "Retro platformer with modern twists — collect, craft, and save the pixel kingdom.",
+    "ratings": 4.3,
+    "developer": "TinyByte"
+  }
+]

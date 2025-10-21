@@ -1,7 +1,8 @@
 const Navbar = () => {
   return (
-    <div className="navbar bg-base-100 shadow-sm">
-      <div className="navbar-start">
+    <div className="bg-base-100 shadow-sm">
+      <div className="navbar container mx-auto">
+        <div className="navbar-start ">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
@@ -71,6 +72,8 @@ const Navbar = () => {
       <div className="navbar-end">
         <a className="btn">Button</a>
       </div>
+      </div>
+      
     </div>
   );
 };
