@@ -1,13 +1,14 @@
 import { useLoaderData } from "react-router";
 import BannerSlider from "../components/BannerSlider";
+import PopularGames from "../components/PopularGames";
 
 const Home = () => {
-
-  const data = useLoaderData()
+  const data = useLoaderData();
 
   return (
-    <div>
-      <BannerSlider data={data}/>
+    <div className="mb-5">
+      <BannerSlider data={data} />
+      <PopularGames data={data} />
     </div>
   );
 };
