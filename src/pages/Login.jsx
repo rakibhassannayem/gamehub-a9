@@ -22,7 +22,7 @@ const Login = () => {
       });
   };
   return (
-    <div className="text-white flex justify-center min-h-screen items-center">
+    <div className="text-white flex justify-center">
       <div className="card bg-gray-800 rounded-xl w-full max-w-sm shrink-0 shadow-2xl pt-4">
         <h2 className="font-semibold text-2xl text-center">
           Login your account

@@ -1,13 +1,15 @@
 import { Outlet } from "react-router";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const AuthLayout = () => {
   return (
-    <div className="bg-gray-900 min-h-screen">
+    <div className="bg-gray-900 min-h-screen flex flex-col justify-between">
       <header>
         <Navbar />
       </header>
       <Outlet />
+      <Footer />
     </div>
   );
 };
