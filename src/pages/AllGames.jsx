@@ -1,13 +1,13 @@
 import { useLoaderData } from "react-router";
-import GameCard from "../components/GameCard";
+import GamesCard from "../components/GamesCard";
 
 const AllGames = () => {
   const games = useLoaderData();
 
   return (
-    <div className="space-y-4 my-3">
+    <div className="my-3 grid md:grid-cols-2 lg:grid-cols-3 gap-3">
       {games.map((game) => (
-        <GameCard key={game.id} game={game} />
+        <GamesCard key={game.id} game={game} />
       ))}
     </div>
   );

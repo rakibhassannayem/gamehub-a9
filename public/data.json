@@ -38,5 +38,55 @@
     "description": "Retro platformer with modern twists — collect, craft, and save the pixel kingdom.",
     "ratings": 4.3,
     "developer": "TinyByte"
+  },
+  {
+    "id": "5",
+    "title": "Shadow Recon",
+    "coverPhoto": "https://images.unsplash.com/photo-1550658511-1ed05e6ac16c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
+    "category": "Stealth",
+    "downloadLink": "https://example.com/shadow-recon",
+    "description": "A tactical stealth mission game where every shadow could be your ally or your downfall.",
+    "ratings": 4.7,
+    "developer": "SilentWorks"
+  },
+  {
+    "id": "6",
+    "title": "Galactic Horizon",
+    "coverPhoto": "https://plus.unsplash.com/premium_vector-1721646140699-d6fc5380173d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1203",
+    "category": "Sci-Fi",
+    "downloadLink": "https://example.com/galactic-horizon",
+    "description": "Explore distant galaxies, build colonies, and survive the mysteries of deep space.",
+    "ratings": 4.9,
+    "developer": "NovaCore Studios"
+  },
+  {
+    "id": "7",
+    "title": "Inferno Run",
+    "coverPhoto": "https://images.unsplash.com/photo-1637609362444-6b370d4b46dc?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
+    "category": "Action",
+    "downloadLink": "https://example.com/inferno-run",
+    "description": "Escape a collapsing city of fire and chaos in this intense action-packed runner.",
+    "ratings": 4.4,
+    "developer": "FireStorm Interactive"
+  },
+  {
+    "id": "8",
+    "title": "Ocean Odyssey",
+    "coverPhoto": "https://plus.unsplash.com/premium_photo-1681255760445-e067e0f1a08f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1332",
+    "category": "Adventure",
+    "downloadLink": "https://example.com/ocean-odyssey",
+    "description": "Dive into an open-world underwater adventure full of secrets, creatures, and lost civilizations.",
+    "ratings": 4.5,
+    "developer": "BlueDepth Studios"
+  },
+  {
+    "id": "9",
+    "title": "Mecha Arena",
+    "coverPhoto": "https://plus.unsplash.com/premium_photo-1744468902575-2b78275fc79b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1344",
+    "category": "Mech Combat",
+    "downloadLink": "https://example.com/mecha-arena",
+    "description": "Build and battle giant customizable mechs in high-energy arena duels.",
+    "ratings": 4.6,
+    "developer": "IronCore Games"
   }
 ]
