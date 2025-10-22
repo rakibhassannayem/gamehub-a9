@@ -63,6 +63,7 @@ const Login = () => {
 
   return (
     <div>
+      <title>Gamehub-login</title>
       {loading ? (
         <LoadingComp />
       ) : (

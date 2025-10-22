@@ -55,6 +55,7 @@ const Register = () => {
 
   return (
     <div>
+      <title>Gamehub-Register</title>
       {loading ? (
         <LoadingComp />
       ) : (

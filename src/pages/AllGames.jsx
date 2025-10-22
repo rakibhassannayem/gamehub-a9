@@ -6,6 +6,7 @@ const AllGames = () => {
 
   return (
     <div className="my-3 grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+      <title>Gamehub-All Games</title>
       {games.map((game) => (
         <GamesCard key={game.id} game={game} />
       ))}

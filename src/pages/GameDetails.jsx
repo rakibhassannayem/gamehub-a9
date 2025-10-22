@@ -26,6 +26,8 @@ const GameDetails = () => {
 
   return (
     <div className="bg-gray-800 min-h-screen pb-3">
+      <title>{`Gamehub-${title}`}</title>
+
       <header>
         <Navbar />
       </header>

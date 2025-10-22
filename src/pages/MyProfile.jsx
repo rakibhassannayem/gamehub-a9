@@ -7,6 +7,7 @@ export default function MyProfile() {
 
   return (
     <div className="min-h-[70vh] p-6 text-white">
+      <title>Gamehub-My Profile</title>
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="mb-6 flex items-center justify-between">

@@ -8,6 +8,7 @@ const Home = () => {
 
   return (
     <div className="py-2">
+      <title>Gamehub-Home</title>
       <BannerSlider data={data} />
       <PopularGames data={data} />
       <NewsLatter />
