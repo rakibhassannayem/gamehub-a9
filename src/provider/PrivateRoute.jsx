@@ -4,7 +4,7 @@ import { Navigate, useLocation } from "react-router";
 import LoadingComp from "../components/LoadingComp";
 
 const PrivateRoute = ({ children }) => {
-  const { user, loading, setLoading } = use(AuthContext);
+  const { user, loading } = use(AuthContext);
 
   const location = useLocation();
 

@@ -1,5 +1,5 @@
 import { use, useState } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import { toast } from "react-toastify";
 import LoadingComp from "../components/LoadingComp";
@@ -8,6 +8,7 @@ const Register = () => {
   const { createUserWithEmailAndPasswordFunc, setUser, updateUser, loading } =
     use(AuthContext);
   const [passError, setPassError] = useState("");
+  const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -36,6 +37,7 @@ const Register = () => {
         updateUser({ displayName: name, photoURL: photo })
           .then(() => {
             setUser({ ...user, displayName: name, photoURL: photo });
+            navigate("/");
             toast.success("Registration Successfull.");
           })
           .catch((error) => {

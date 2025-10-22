@@ -1,13 +1,15 @@
-import { Outlet } from "react-router";
+import { Outlet, useNavigation } from "react-router";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import LoadingComp from "../components/LoadingComp";
 
 const MainLayout = () => {
+  const { state } = useNavigation();
   return (
     <div className="bg-gray-900 flex flex-col justify-between pb-3">
       <Navbar />
       <div className="container mx-auto">
-        <Outlet />
+        {state == "loading" ? <LoadingComp /> : <Outlet />}
       </div>
       <Footer />
     </div>
