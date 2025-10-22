@@ -3,7 +3,7 @@ import logo from '/logo.jpg'
 const Footer = () => {
   return (
     <div>
-      <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content items-center p-3 container mx-auto border border-purple-600 mb-5 rounded-lg">
+      <footer className="footer sm:footer-horizontal bg-neutral items-center p-3 container mx-auto border border-purple-600 rounded-lg text-white">
         <aside className="grid-flow-col items-center">
           <img className='w-13' src={logo} alt="" />
           <p>Copyright © {new Date().getFullYear()} - All right reserved</p>

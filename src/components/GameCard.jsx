@@ -1,9 +1,11 @@
 import { FaStar, FaExternalLinkAlt } from "react-icons/fa";
+import { Link } from "react-router";
 
 export default function GameCard({ game }) {
   if (!game) return null;
 
   const {
+    id,
     title,
     coverPhoto,
     category,
@@ -18,7 +20,7 @@ export default function GameCard({ game }) {
   const totalStars = 5;
 
   return (
-    <article className="card md:card-side bg-base-100 shadow-lg overflow-hidden">
+    <article className="card md:card-side bg-base-100 shadow-lg overflow-hidden text-white">
       <figure className="w-full md:w-1/4 h-48 md:h-auto">
         <img
           src={coverPhoto}
@@ -73,21 +75,19 @@ export default function GameCard({ game }) {
             <a
               href={downloadLink}
               target="_blank"
-              rel="noreferrer noopener"
               className="btn btn-primary btn-sm flex items-center gap-2"
             >
               Download
               <FaExternalLinkAlt className="w-3 h-3" />
             </a>
 
-            <button
-              type="button"
+            <Link
+              to={`/game-details/${id}`}
               className="btn btn-outline btn-sm"
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               title="View details"
             >
               Details
-            </button>
+            </Link>
           </div>
         </div>
       </div>

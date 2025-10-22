@@ -2,9 +2,6 @@
 @plugin "daisyui" {
   themes: light;
 }
-* {
-  color: white;
-}
 a.active {
   @apply underline underline-offset-6 decoration-purple-500;
 }
