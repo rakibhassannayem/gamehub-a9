@@ -3,11 +3,13 @@ import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import { toast } from "react-toastify";
 import LoadingComp from "../components/LoadingComp";
+import { IoIosEye, IoIosEyeOff } from "react-icons/io";
 
 const Register = () => {
   const { createUserWithEmailAndPasswordFunc, setUser, updateUser, loading } =
     use(AuthContext);
   const [passError, setPassError] = useState("");
+  const [show, setShow] = useState(false);
   const navigate = useNavigate();
 
   const handleRegister = (e) => {
@@ -87,14 +89,24 @@ const Register = () => {
                   placeholder="Enter your email"
                   required
                 />
-                <label className="label text-lg font-semibold">Password</label>
-                <input
-                  name="password"
-                  type="password"
-                  className="input border"
-                  placeholder="write 6 digit password"
-                  required
-                />
+                <div className="relative">
+                  <label className="label text-lg font-semibold">
+                    Password
+                  </label>
+                  <input
+                    name="password"
+                    type={show ? "text" : "password"}
+                    className="input border"
+                    placeholder="write 6 digit password"
+                    required
+                  />
+                  <span
+                    onClick={() => setShow(!show)}
+                    className="absolute right-7 bottom-3 cursor-pointer z-10"
+                  >
+                    {show ? <IoIosEyeOff size={18} /> : <IoIosEye size={18} />}
+                  </span>
+                </div>
 
                 {passError && <p className="text-red-500">{passError}</p>}
 
