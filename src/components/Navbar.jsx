@@ -2,9 +2,20 @@ import { Link } from "react-router";
 import logo from "/logo.jpg";
 import { use } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
-  const { user } = use(AuthContext);
+  const { user, logOutFunc } = use(AuthContext);
+
+  const handleLogout = () => {
+    logOutFunc()
+      .then(() => {
+        toast.success("Logout successful.");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
   return (
     <div className="bg-base-100 shadow-sm bg-linear-to-r ">
       <div className="navbar container mx-auto ">
@@ -62,14 +73,15 @@ const Navbar = () => {
           </div>
 
           {user ? (
-            <div className="flex items-center gap-1">
-              <div>{user.name}</div>
-              <Link
+            <div className="flex items-center gap-3">
+              <div>{user.email}</div>
+              <button
+                onClick={handleLogout}
                 to={"/"}
                 className="btn bg-purple-800 text-white rounded-lg text-lg"
               >
                 Logout
-              </Link>
+              </button>
             </div>
           ) : (
             <div className="space-x-2">
