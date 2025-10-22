@@ -1,4 +1,4 @@
-import { use, useState } from "react";
+import { use, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import { toast } from "react-toastify";
@@ -6,12 +6,17 @@ import LoadingComp from "../components/LoadingComp";
 import { IoIosEye, IoIosEyeOff } from "react-icons/io";
 
 const Login = () => {
-  const { signInWithEmailAndPasswordFunc, signInWithPopupFunc, loading } =
-    use(AuthContext);
+  const {
+    signInWithEmailAndPasswordFunc,
+    signInWithPopupFunc,
+    loading,
+    sendPasswordResetEmailFunc,
+  } = use(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const [show, setShow] = useState(false);
+  const emailRef = useRef(null);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -43,6 +48,19 @@ const Login = () => {
       });
   };
 
+  const handleForgotPass = (e) => {
+    e.preventDefault();
+    const email = emailRef.current.value;
+    sendPasswordResetEmailFunc(email)
+      .then(() => {
+        toast.success("please check your email.");
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        setError(errorCode);
+      });
+  };
+
   return (
     <div>
       {loading ? (
@@ -59,6 +77,7 @@ const Login = () => {
                 <input
                   name="email"
                   type="email"
+                  ref={emailRef}
                   className="input border"
                   placeholder="Enter your email"
                   required
@@ -85,7 +104,10 @@ const Login = () => {
                 {error && <p className="text-red-500">{error}</p>}
 
                 <div>
-                  <a className="link link-hover text-[14px]">
+                  <a
+                    onClick={handleForgotPass}
+                    className="link link-hover text-[14px]"
+                  >
                     Forgot password?
                   </a>
                 </div>
