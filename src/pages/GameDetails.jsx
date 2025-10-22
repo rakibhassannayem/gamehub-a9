@@ -41,31 +41,39 @@ const GameDetails = () => {
           <div className="card-body flex flex-col justify-end">
             <div className="flex flex-col md:flex-row justify-between items-center md:items-end gap-10">
               <div className="space-y-1 font-semibold">
-                <h2 className="text-5xl font-semibold mb-2 text-center md:text-start">{title}</h2>
-                <p className="text-lg max-w-3/4">
-                  <span className="font-bold text-yellow-400">Category: </span>
-                  {category}
-                </p>
-                <p className="text-lg max-w-3/4">
-                  <span className="font-bold text-yellow-400">Developer: </span>
-                  {developer}
-                </p>
-                <p className="text-lg md:max-w-3/4">
-                  <span className="font-bold text-yellow-400">
-                    Description:{" "}
-                  </span>
-                  {description}
-                </p>
+                <h2 className="text-5xl font-semibold mb-2 text-center md:text-start">
+                  {title}
+                </h2>
+                <div className="mt-5 text-center md:text-start">
+                  <p className="text-lg">
+                    <span className="font-bold text-yellow-400">
+                      Category:{" "}
+                    </span>
+                    {category}
+                  </p>
+                  <p className="text-lg">
+                    <span className="font-bold text-yellow-400">
+                      Developer:{" "}
+                    </span>
+                    {developer}
+                  </p>
+                  <p className="text-lg md:max-w-3/4">
+                    <span className="font-bold text-yellow-400">
+                      Description:{" "}
+                    </span>
+                    {description}
+                  </p>
+                </div>
               </div>
 
               <div className="space-y-3">
                 <div className="text-2xl font-bold flex justify-center md:justify-end items-center text-yellow-300">
-                  {ratings} / 5 <BiStar className="ml-1" />
+                  {ratings} / 5 <BiStar size={28} className="ml-1" />
                 </div>
                 <a
                   href={downloadLink}
                   target="_blank"
-                  className="btn btn-primary text-purple-500 py-6"
+                  className="btn btn-primary text-xl py-6"
                 >
                   Download Now
                 </a>
