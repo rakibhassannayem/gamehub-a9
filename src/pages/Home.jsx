@@ -7,7 +7,7 @@ const Home = () => {
   const data = useLoaderData();
 
   return (
-    <div className="mb-5">
+    <div className="py-2">
       <BannerSlider data={data} />
       <PopularGames data={data} />
       <NewsLatter />

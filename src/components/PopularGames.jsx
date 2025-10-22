@@ -5,10 +5,13 @@ const PopularGames = ({ data }) => {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold my-3">Popular Games</h2>
+      <h2 className="text-2xl font-bold my-3 text-white">Popular Games</h2>
       <div className="flex flex-col md:flex-row justify-between gap-2 text-white">
         {topRated.map((game) => (
-          <div key={game.id} className="card bg-base-100 image-full shadow-sm cursor-pointer group hover:scale-105 transition">
+          <div
+            key={game.id}
+            className="card bg-base-100 image-full shadow-sm cursor-pointer group hover:scale-105 transition"
+          >
             <img
               src={game.coverPhoto}
               alt={game.title}

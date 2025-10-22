@@ -2,7 +2,7 @@ import React from "react";
 
 const NewsLatter = () => {
   return (
-    <div className="flex items-center justify-center my-5 min bg-linear-to-br from-purple-700 to-purple-900 py-20 rounded-xl  text-center">
+    <div className="flex items-center justify-center my-5 min bg-linear-to-br border-2 border-white py-20 rounded-xl  text-center">
       <div className="flex flex-col items-center justify-center text-white">
         <h2 className="text-4xl font-semibold">
           Stay in the Game — Get the Latest Indie Drops!
