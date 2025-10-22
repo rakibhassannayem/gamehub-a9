@@ -14,10 +14,10 @@ const NewsLatter = () => {
         <div className="join mt-12 w-full flex justify-center">
           <input
             type="text"
-            className="input join-item border text-lg"
+            className="input join-item border border-purple-600 text-lg"
             placeholder="Enter your email"
           />
-          <button className="btn join-item text-xl">Subscribe</button>
+          <button className="btn join-item border-purple-600 text-xl">Subscribe</button>
         </div>
       </div>
     </div>

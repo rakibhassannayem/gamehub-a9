@@ -5,6 +5,7 @@ import NotFoundPage from "../pages/NotFoundPage";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import AuthLayout from "../layouts/AuthLayout";
+import AllGames from "../pages/AllGames";
 
 export const router = createBrowserRouter([
   {
@@ -14,6 +15,12 @@ export const router = createBrowserRouter([
       {
         path: "",
         element: <Home />,
+        loader: () => fetch("/data.json"),
+        hydrateFallbackElement: <p>Loading...</p>,
+      },
+      {
+        path: "/all-games",
+        element: <AllGames />,
         loader: () => fetch("/data.json"),
         hydrateFallbackElement: <p>Loading...</p>,
       },

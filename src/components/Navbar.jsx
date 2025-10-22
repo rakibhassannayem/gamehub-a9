@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 import logo from "/logo.jpg";
 import { use } from "react";
 import { AuthContext } from "../provider/AuthProvider";
@@ -61,14 +61,10 @@ const Navbar = () => {
         </div>
 
         <div className="navbar-end">
-          <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1 text-lg text-white">
-              <li>
-                <a>Item 1</a>
-              </li>
-              <li>
-                <a>Item 3</a>
-              </li>
+          <div className="navbar-center lg:flex">
+            <ul className="menu menu-horizontal px-1 text-lg text-white gap-3 mr-3">
+              <NavLink to={"/"}>Home</NavLink>
+              <NavLink to={"/all-games"}>All-Games</NavLink>
             </ul>
           </div>
 
