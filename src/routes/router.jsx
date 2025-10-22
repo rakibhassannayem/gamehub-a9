@@ -8,6 +8,8 @@ import AuthLayout from "../layouts/AuthLayout";
 import AllGames from "../pages/AllGames";
 import GameDetails from "../pages/GameDetails";
 import PrivateRoute from "../provider/PrivateRoute";
+import MyProfile from "../pages/MyProfile";
+import UpdateProfile from "../pages/UpdateProfile";
 
 export const router = createBrowserRouter([
   {
@@ -25,6 +27,14 @@ export const router = createBrowserRouter([
         element: <AllGames />,
         loader: () => fetch("/data.json"),
         hydrateFallbackElement: <p>Loading...</p>,
+      },
+      {
+        path: "/my-profile",
+        element: <MyProfile />,
+      },
+      {
+        path: "/profile/update",
+        element: <UpdateProfile />,
       },
     ],
   },
@@ -44,7 +54,11 @@ export const router = createBrowserRouter([
   },
   {
     path: "/game-details/:id",
-    element: <PrivateRoute><GameDetails /></PrivateRoute>,
+    element: (
+      <PrivateRoute>
+        <GameDetails />
+      </PrivateRoute>
+    ),
     loader: () => fetch("/data.json"),
     hydrateFallbackElement: <p>Loading...</p>,
   },

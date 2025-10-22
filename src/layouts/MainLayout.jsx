@@ -6,7 +6,7 @@ import LoadingComp from "../components/LoadingComp";
 const MainLayout = () => {
   const { state } = useNavigation();
   return (
-    <div className="bg-gray-900 flex flex-col justify-between pb-3">
+    <div className="bg-gray-900 flex flex-col justify-between min-h-screen pb-3">
       <Navbar />
       <div className="container mx-auto">
         {state == "loading" ? <LoadingComp /> : <Outlet />}

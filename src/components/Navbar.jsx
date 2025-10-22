@@ -45,7 +45,7 @@ const Navbar = () => {
 
         <div className="navbar-end">
           <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1 text-lg text-white gap-3 mr-3">
+            <ul className="menu menu-horizontal px-1 text-lg font-semibold text-white gap-3 mr-3">
               <NavLink to={"/"}>Home</NavLink>
               <NavLink to={"/all-games"}>All-Games</NavLink>
             </ul>
@@ -53,16 +53,16 @@ const Navbar = () => {
 
           {user ? (
             <div className="flex items-center gap-3">
-              <div>
-                <img className="w-10" src={user.photoURL} alt="" />
-              </div>
-              <button
+              <Link to={'/my-profile'}>
+                <img className="w-10 rounded-full cursor-pointer hover:scale-110 transition" src={user.photoURL} alt="" />
+              </Link>
+              <Link
                 onClick={handleLogout}
-                to={"/"}
+                to={""}
                 className="btn bg-purple-800 text-white rounded-lg text-lg"
               >
                 Logout
-              </button>
+              </Link>
             </div>
           ) : (
             <div className="space-x-2">
