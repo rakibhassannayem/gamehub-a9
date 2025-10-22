@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import logo from "/logo.jpg";
 
 const Navbar = () => {
@@ -55,7 +56,7 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="space-x-2">
-            <a className="btn bg-purple-800 text-white rounded-lg text-lg">Login</a>
+            <Link to={'/auth/login'} className="btn bg-purple-800 text-white rounded-lg text-lg">Login</Link>
             <a className="btn bg-purple-800 text-white rounded-lg text-lg">Register</a>
           </div>
         </div>
