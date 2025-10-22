@@ -7,6 +7,7 @@ import Register from "../pages/Register";
 import AuthLayout from "../layouts/AuthLayout";
 import AllGames from "../pages/AllGames";
 import GameDetails from "../pages/GameDetails";
+import PrivateRoute from "../provider/PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -43,7 +44,7 @@ export const router = createBrowserRouter([
   },
   {
     path: "/game-details/:id",
-    element: <GameDetails />,
+    element: <PrivateRoute><GameDetails /></PrivateRoute>,
     loader: () => fetch("/data.json"),
     hydrateFallbackElement: <p>Loading...</p>,
   },
