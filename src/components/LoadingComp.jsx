@@ -1,7 +1,7 @@
 
 const LoadingComp = () => {
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-800">
+    <div className="flex justify-center items-center min-h-screen bg-gray-900">
       <span className="loading loading-infinity loading-xl w-40 text-purple-600"></span>
     </div>
   );
