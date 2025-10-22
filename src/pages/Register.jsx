@@ -1,25 +1,88 @@
-import React from 'react';
-import { Link } from 'react-router';
+import { use } from "react";
+import { Link } from "react-router";
+import { AuthContext } from "../provider/AuthProvider";
+import { toast } from "react-toastify";
 
 const Register = () => {
+  const { createUserWithEmailAndPasswordFunc, user, setUser } =
+    use(AuthContext);
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const photoUrl = form.photoUrl.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log({ name, photoUrl, email, password });
+
+    createUserWithEmailAndPasswordFunc(email, password)
+      .then((res) => {
+        const user = res.user;
+        setUser(user);
+        toast.success("Registration Successfull.");
+      })
+      .catch((error) => {
+        // const errorCode = error.code;
+        const errorMessage = error.message;
+        toast.error(errorMessage);
+      });
+  };
+
   return (
     <div className="text-white flex justify-center min-h-screen items-center">
       <div className="card bg-gray-800 rounded-xl w-full max-w-sm shrink-0 shadow-2xl pt-4">
-        <h2 className="font-semibold text-2xl text-center">Register your account</h2>
-        <div className="card-body">
+        <h2 className="font-semibold text-2xl text-center">
+          Register your account
+        </h2>
+        <form onSubmit={handleRegister} className="card-body">
           <fieldset className="fieldset">
             <label className="label text-lg font-semibold">Name</label>
-            <input type="email" className="input border" placeholder="Enter your name" />
+            <input
+              name="name"
+              type="text"
+              className="input border"
+              placeholder="Enter your name"
+              required
+            />
             <label className="label text-lg font-semibold">Photo URL</label>
-            <input type="email" className="input border" placeholder="Enter your photo url" />
+            <input
+              name="photoUrl"
+              type="text"
+              className="input border"
+              placeholder="Enter your photo url"
+              required
+            />
             <label className="label text-lg font-semibold">Email</label>
-            <input type="email" className="input border" placeholder="Enter your email" />
+            <input
+              name="email"
+              type="email"
+              className="input border"
+              placeholder="Enter your email"
+              required
+            />
             <label className="label text-lg font-semibold">Password</label>
-            <input type="password" className="input border" placeholder="write 6 digit password" />
-            <button className="btn text-xl bg-purple-800 mt-4">Login</button>
-            <p className="mt-3 text-center font-semibold">Already have an account? <Link to={'/auth/login'} className="text-purple-500">Login</Link></p>
+            <input
+              name="password"
+              type="password"
+              className="input border"
+              placeholder="write 6 digit password"
+              required
+            />
+            <button type="submit" className="btn text-xl bg-purple-800 mt-4">
+              Register
+            </button>
+            <p className="mt-3 text-center font-semibold">
+              Already have an account?{" "}
+              <Link
+                to={"/auth/login"}
+                className="text-purple-500! hover:underline"
+              >
+                Login
+              </Link>
+            </p>
           </fieldset>
-        </div>
+        </form>
       </div>
     </div>
   );

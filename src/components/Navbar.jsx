@@ -1,12 +1,14 @@
 import { Link } from "react-router";
 import logo from "/logo.jpg";
+import { use } from "react";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Navbar = () => {
+  const { user } = use(AuthContext);
   return (
     <div className="bg-base-100 shadow-sm bg-linear-to-r ">
       <div className="navbar container mx-auto ">
         <div className="navbar-start ">
-
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
               <svg
@@ -38,10 +40,13 @@ const Navbar = () => {
             </ul>
           </div>
 
-          <a className="btn btn-ghost bg-none outline-0 border-0 text-white font-bold text-2xl">
+          <Link
+            to={"/"}
+            className="btn btn-ghost bg-none outline-0 border-0 text-white font-bold text-2xl"
+          >
             <img className="w-10" src={logo} alt="" />
             GameHub
-          </a>
+          </Link>
         </div>
 
         <div className="navbar-end">
@@ -55,10 +60,34 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <div className="space-x-2">
-            <Link to={'/auth/login'} className="btn bg-purple-800 text-white rounded-lg text-lg">Login</Link>
-            <a className="btn bg-purple-800 text-white rounded-lg text-lg">Register</a>
-          </div>
+
+          {user ? (
+            <div className="flex items-center gap-1">
+              <div>{user.name}</div>
+              <Link
+                to={"/"}
+                className="btn bg-purple-800 text-white rounded-lg text-lg"
+              >
+                Logout
+              </Link>
+            </div>
+          ) : (
+            <div className="space-x-2">
+              <Link
+                to={"/auth/login"}
+                className="btn bg-purple-800 text-white rounded-lg text-lg"
+              >
+                Login
+              </Link>
+
+              <Link
+                to={"/auth/register"}
+                className="btn bg-purple-800 text-white rounded-lg text-lg"
+              >
+                Register
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </div>
