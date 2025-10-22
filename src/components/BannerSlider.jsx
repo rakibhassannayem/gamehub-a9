@@ -5,7 +5,7 @@ import {
 
 const BannerSlider = ({ data }) => {
   return (
-    <div className="carousel w-full">
+    <div className="carousel w-full mt-2">
       {data.map((game, index) => {
         let prevIndex = index - 1;
         let nextIndex = index + 1;

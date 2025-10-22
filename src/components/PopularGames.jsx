@@ -6,7 +6,7 @@ const PopularGames = ({ data }) => {
   return (
     <div>
       <h2 className="text-2xl font-bold my-3">Popular Games</h2>
-      <div className="flex justify-between gap-2 text-white">
+      <div className="flex flex-col md:flex-row justify-between gap-2 text-white">
         {topRated.map((game) => (
           <div key={game.id} className="card bg-base-100 image-full shadow-sm cursor-pointer group hover:scale-105 transition">
             <img
@@ -31,26 +31,3 @@ const PopularGames = ({ data }) => {
 };
 
 export default PopularGames;
-
-{
-  /* <div
-          key={game.id}
-          className="card bg-base-10 shadow-s cursor-pointer "
-        >
-          <img
-            src={game.coverPhoto}
-            alt={game.title}
-            className="h-full brightness-50 hover:brightness-100"
-          />
-
-          <div className="flex justify-between items-baseline-last text-2xl font-semibold">
-            <div className="bg-black/55 w-full flex justify-between p-3">
-              <h2 className="">{game.title}</h2>
-              <div className="flex items-center gap-1">
-                <BiStar size={18} />
-                {game.ratings}
-              </div>
-            </div>
-          </div>
-        </div> */
-}
