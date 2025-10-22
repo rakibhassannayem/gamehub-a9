@@ -6,7 +6,8 @@ import LoadingComp from "../components/LoadingComp";
 import { IoIosEye, IoIosEyeOff } from "react-icons/io";
 
 const Login = () => {
-  const { signInWithEmailAndPasswordFunc, loading } = use(AuthContext);
+  const { signInWithEmailAndPasswordFunc, signInWithPopupFunc, loading } =
+    use(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   const [error, setError] = useState("");
@@ -28,6 +29,20 @@ const Login = () => {
         setError(errorCode);
       });
   };
+
+  const handleGoogleSignin = (e) => {
+    e.preventDefault();
+    signInWithPopupFunc()
+      .then(() => {
+        toast.success("Login Successfull.");
+        navigate(`${location.state ? location.state : "/"}`);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        setError(errorCode);
+      });
+  };
+
   return (
     <div>
       {loading ? (
@@ -77,9 +92,30 @@ const Login = () => {
 
                 <button
                   type="submit"
-                  className="btn bg-purple-800 mt-4 text-xl"
+                  className="btn border-0 rounded-lg bg-purple-800 mt-4 text-xl"
                 >
                   Login
+                </button>
+
+                {/* Divider */}
+                <div className="flex items-center justify-center gap-2 my-2">
+                  <div className="h-px w-16 bg-white/30"></div>
+                  <span className="text-sm text-white/70">or</span>
+                  <div className="h-px w-16 bg-white/30"></div>
+                </div>
+
+                {/* Google Signin */}
+                <button
+                  type="button"
+                  onClick={handleGoogleSignin}
+                  className="btn border-0 flex items-center justify-center gap-3 bg-purple-800 text-white text-[16px] px-5 py-2 rounded-lg w-full font-semibold cursor-pointer"
+                >
+                  <img
+                    src="https://www.svgrepo.com/show/475656/google-color.svg"
+                    alt="google"
+                    className="w-5 h-5"
+                  />
+                  Continue with Google
                 </button>
 
                 <p className="mt-3 text-center font-semibold text-[14px]">
