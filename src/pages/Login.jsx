@@ -1,10 +1,13 @@
-import { use } from "react";
-import { Link } from "react-router";
+import { use, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import { toast } from "react-toastify";
 
 const Login = () => {
   const { signInWithEmailAndPasswordFunc } = use(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [error, setError] = useState("");
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -14,11 +17,12 @@ const Login = () => {
     signInWithEmailAndPasswordFunc(email, password)
       .then(() => {
         toast.success("Login Successfull.");
+        navigate(`${location.state ? location.state : "/"}`);
       })
       .catch((error) => {
-        // const errorCode = error.code;
-        const errorMessage = error.message;
-        toast.error(errorMessage);
+        const errorCode = error.code;
+        // const errorMessage = error.message;
+        setError(errorCode);
       });
   };
   return (
@@ -45,6 +49,9 @@ const Login = () => {
               placeholder="write 6 digit password"
               required
             />
+
+            {error && <p className="text-red-500">{error}</p>}
+
             <div>
               <a className="link link-hover text-[14px]">Forgot password?</a>
             </div>

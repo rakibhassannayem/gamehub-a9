@@ -1,11 +1,11 @@
-import { use } from "react";
+import { use, useState } from "react";
 import { Link } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import { toast } from "react-toastify";
 
 const Register = () => {
-  const { createUserWithEmailAndPasswordFunc, setUser } =
-    use(AuthContext);
+  const { createUserWithEmailAndPasswordFunc, setUser } = use(AuthContext);
+  const [passError, setPassError] = useState("");
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -14,6 +14,14 @@ const Register = () => {
     const photoUrl = form.photoUrl.value;
     const email = form.email.value;
     const password = form.password.value;
+
+    if (password.length < 6) {
+      setPassError("Password should be at least 6 digits");
+      return;
+    } else {
+      setPassError("");
+    }
+
     console.log({ name, photoUrl, email, password });
 
     createUserWithEmailAndPasswordFunc(email, password)
@@ -69,6 +77,9 @@ const Register = () => {
               placeholder="write 6 digit password"
               required
             />
+
+            {passError && <p className="text-red-500">{passError}</p>}
+
             <button type="submit" className="btn text-xl bg-purple-800 mt-4">
               Register
             </button>
