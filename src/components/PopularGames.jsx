@@ -8,10 +8,10 @@ const PopularGames = ({ data }) => {
       <h2 className="text-2xl font-bold my-3">Popular Games</h2>
       <div className="flex justify-between gap-2 text-white">
         {topRated.map((game) => (
-          <div className="card bg-base-100 image-full shadow-sm cursor-pointer group hover:scale-105 transition">
+          <div key={game.id} className="card bg-base-100 image-full shadow-sm cursor-pointer group hover:scale-105 transition">
             <img
               src={game.coverPhoto}
-              alt="Shoes"
+              alt={game.title}
               className="brightness-50 group-hover:brightness-100 h-full rounded-xl"
             />
 
