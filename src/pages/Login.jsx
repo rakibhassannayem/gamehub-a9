@@ -8,7 +8,6 @@ const Login = () => {
   const {
     signInWithEmailAndPasswordFunc,
     signInWithPopupFunc,
-    sendPasswordResetEmailFunc,
   } = use(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
@@ -48,14 +47,7 @@ const Login = () => {
   const handleForgotPass = (e) => {
     e.preventDefault();
     const email = emailRef.current.value;
-    sendPasswordResetEmailFunc(email)
-      .then(() => {
-        toast.success("please check your email.");
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        setError(errorCode);
-      });
+    navigate("/reset-password", { state: { email } });
   };
 
   return (
