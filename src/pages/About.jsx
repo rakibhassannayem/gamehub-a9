@@ -20,9 +20,9 @@ const About = () => {
         transition={{ delay: 0.4, duration: 0.8 }}
         className="max-w-2xl text-gray-300 mb-6"
       >
-        GameHub is an online library where players can explore and support indie
-        games. Our goal is to connect gamers with creative developers and make
-        discovering new games fun and effortless.
+        GameHub is an online library where players can explore and support
+        gamers. Our goal is to connect gamers and discovering new games fun and
+        effortless.
       </motion.p>
 
       <motion.div
@@ -31,7 +31,9 @@ const About = () => {
         transition={{ delay: 0.6, duration: 0.8 }}
         className="text-gray-400 text-sm"
       >
-        Created by <span className="text-primary font-semibold">Rakib Hassan Nayem</span> using React, TailwindCSS & Firebase.
+        Created by{" "}
+        <span className="text-primary font-semibold">Rakib Hassan Nayem</span>{" "}
+        using React, TailwindCSS & Firebase.
       </motion.div>
     </div>
   );
