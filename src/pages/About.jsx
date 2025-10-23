@@ -20,9 +20,9 @@ const About = () => {
         transition={{ delay: 0.4, duration: 0.8 }}
         className="max-w-2xl text-gray-300 mb-6"
       >
-        GameHub is an online library where players can explore and support
-        gamers. Our goal is to connect gamers and discovering new games fun and
-        effortless.
+        GameHub is an online library where players can explore and support indie
+        games. Our goal is to connect gamers with creative developers and make
+        discovering new games fun and effortless.
       </motion.p>
 
       <motion.div

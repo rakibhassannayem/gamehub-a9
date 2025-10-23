@@ -5,6 +5,7 @@
 **Live:** <https://gamehub-7fab1.web.app>
 
 ## Key Features
+- Browse curated indie games with cover images, categories and ratings.
 - Slider banner and popular games section.
 - Game details (protected): view full game info and download links.
 - Email/password + Google authentication (Register, Login, Forgot Password).

@@ -5,7 +5,7 @@ const NewsLatter = () => {
     <div className="flex items-center justify-center my-5 min bg-linear-to-br border-2 border-white py-20 rounded-xl  text-center">
       <div className="flex flex-col items-center justify-center text-white">
         <h2 className="text-4xl font-semibold">
-          Stay in the Game — Get the Latest Drops!
+          Stay in the Game — Get the Latest Indie Drops!
         </h2>
         <p className="text-lg text-gray-300 mt-4 max-w-2/3">
           Subscribe to our newsletter and never miss out on exclusive releases, developer spotlights, and gaming updates.
