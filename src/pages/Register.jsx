@@ -34,8 +34,6 @@ const Register = () => {
       setPassError("");
     }
 
-    console.log({ name, photo, email, password });
-
     createUserWithEmailAndPasswordFunc(email, password)
       .then((res) => {
         const user = res.user;

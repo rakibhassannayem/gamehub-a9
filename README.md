@@ -1,16 +1,25 @@
-# React + Vite
+# Gamehub - A Game Library
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Purpose:** An engaging online library for discovering and supporting indie game developers.
 
-Currently, two official plugins are available:
+**Live:** <https://gamehub-7fab1.web.app>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Key Features
+- Browse curated indie games with cover images, categories and ratings.
+- Slider banner and popular games section.
+- Game details (protected): view full game info and download links.
+- Email/password + Google authentication (Register, Login, Forgot Password).
+- User Profile and Update Information (name, photoURL).
+- Responsive, vibrant urban-themed UI.
+- Animations with Framer Motion / GSAP / React Spring.
 
-## React Compiler
+## Tech Stack
+- React (create-react-app / Vite)
+- React Router
+- Firebase Authentication
+- Tailwind CSS (or preferred CSS framework)
+- Framer Motion (or GSAP/React Spring)
+- Hosted on Netlify / Firebase Hosting / Vercel
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Environment Variables
+Store Firebase config in `.env` (do not commit):
