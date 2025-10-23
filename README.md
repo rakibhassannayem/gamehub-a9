@@ -5,7 +5,6 @@
 **Live:** <https://gamehub-7fab1.web.app>
 
 ## Key Features
-
 - Slider banner and popular games section.
 - Game details (protected): view full game info and download links.
 - Email/password + Google authentication (Register, Login, Forgot Password).
@@ -14,7 +13,6 @@
 - Animations with Framer Motion.
 
 ## Tech Stack
-
 - React (create-react-app / Vite)
 - React Router
 - Firebase Authentication
@@ -23,14 +21,13 @@
 - Hosted on Netlify / Firebase Hosting / Vercel
 
 ## npm packages
-
-- @tailwindcss/vite
-- daisyui
-- firebase
-- framer-motion
-- react
-- react-dom
-- react-icons
-- react-router
-- react-toastify
-- tailwindcss
+- "@tailwindcss/vite": "^4.1.15",
+- "daisyui": "^5.3.7",
+- "firebase": "^12.4.0",
+- "framer-motion": "^12.23.24",
+- "react": "^19.1.1",
+- "react-dom": "^19.1.1",
+- "react-icons": "^5.5.0",
+- "react-router": "^7.9.4",
+- "react-toastify": "^11.0.5",
+- "tailwindcss": "^4.1.15"
