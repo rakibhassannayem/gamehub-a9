@@ -1,9 +1,9 @@
 import { use, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
-import { AuthContext } from "../provider/AuthProvider";
 import { toast } from "react-toastify";
 import LoadingComp from "../components/LoadingComp";
 import { IoIosEye, IoIosEyeOff } from "react-icons/io";
+import { AuthContext } from "../provider/AuthContext";
 
 const Login = () => {
   const {

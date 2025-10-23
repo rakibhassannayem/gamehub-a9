@@ -1,9 +1,9 @@
 import { Link, NavLink } from "react-router";
 import logo from "/logo.jpg";
 import { use } from "react";
-import { AuthContext } from "../provider/AuthProvider";
 import { toast } from "react-toastify";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { AuthContext } from "../provider/AuthContext";
 
 const Navbar = () => {
   const { user, logOutFunc } = use(AuthContext);
@@ -48,6 +48,7 @@ const Navbar = () => {
             <ul className="menu menu-horizontal px-1 text-lg font-semibold text-white gap-3 mr-3">
               <NavLink to={"/"}>Home</NavLink>
               <NavLink to={"/all-games"}>All-Games</NavLink>
+              <NavLink to={"/animation"}>Animation</NavLink>
             </ul>
           </div>
 
