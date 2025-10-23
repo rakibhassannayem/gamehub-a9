@@ -4,6 +4,7 @@ import { use } from "react";
 import { toast } from "react-toastify";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AuthContext } from "../provider/AuthContext";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const { user, logOutFunc } = use(AuthContext);
@@ -17,6 +18,13 @@ const Navbar = () => {
         toast.error(error.message);
       });
   };
+
+  // simple animation variants
+  const linkMotion = {
+    hover: { scale: 1.1, color: "#A855F7" }, // purple color when hovered
+    tap: { scale: 0.95 },
+  };
+
   return (
     <div className="bg-base-100 shadow-sm bg-linear-to-r ">
       <div className="navbar container mx-auto flex-col sm:flex-row gap-4">
@@ -31,6 +39,7 @@ const Navbar = () => {
             >
               <NavLink to={"/"}>Home</NavLink>
               <NavLink to={"/all-games"}>All-Games</NavLink>
+              <NavLink to={"/about"}>About</NavLink>
             </ul>
           </div>
 
@@ -46,16 +55,26 @@ const Navbar = () => {
         <div className="navbar-end">
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1 text-lg font-semibold text-white gap-3 mr-3">
-              <NavLink to={"/"}>Home</NavLink>
-              <NavLink to={"/all-games"}>All-Games</NavLink>
-              <NavLink to={"/animation"}>Animation</NavLink>
+               <motion.div whileHover="hover" whileTap="tap" variants={linkMotion}>
+                <NavLink to={"/"}>Home</NavLink>
+              </motion.div>
+              <motion.div whileHover="hover" whileTap="tap" variants={linkMotion}>
+                <NavLink to={"/all-games"}>All-Games</NavLink>
+              </motion.div>
+              <motion.div whileHover="hover" whileTap="tap" variants={linkMotion}>
+                <NavLink to={"/about"}>About</NavLink>
+              </motion.div>
             </ul>
           </div>
 
           {user ? (
             <div className="flex items-center gap-3">
-              <Link to={'/my-profile'}>
-                <img className="w-10 rounded-full cursor-pointer hover:scale-110 transition" src={user.photoURL} alt="" />
+              <Link to={"/my-profile"}>
+                <img
+                  className="w-10 rounded-full cursor-pointer hover:scale-110 transition"
+                  src={user.photoURL}
+                  alt=""
+                />
               </Link>
               <Link
                 onClick={handleLogout}

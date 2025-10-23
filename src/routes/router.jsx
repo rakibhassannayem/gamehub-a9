@@ -10,7 +10,7 @@ import GameDetails from "../pages/GameDetails";
 import PrivateRoute from "../provider/PrivateRoute";
 import MyProfile from "../pages/MyProfile";
 import UpdateProfile from "../pages/UpdateProfile";
-import Animation from "../pages/Animation";
+import About from "../pages/About";
 
 export const router = createBrowserRouter([
   {
@@ -30,8 +30,8 @@ export const router = createBrowserRouter([
         hydrateFallbackElement: <p>Loading...</p>,
       },
       {
-        path: "/animation",
-        element: <Animation />,
+        path: "/about",
+        element: <About />,
       },
       {
         path: "/my-profile",
