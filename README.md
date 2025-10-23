@@ -21,13 +21,13 @@
 - Hosted on Netlify / Firebase Hosting / Vercel
 
 ## npm packages
-- "@tailwindcss/vite": "^4.1.15",
-- "daisyui": "^5.3.7",
-- "firebase": "^12.4.0",
-- "framer-motion": "^12.23.24",
-- "react": "^19.1.1",
-- "react-dom": "^19.1.1",
-- "react-icons": "^5.5.0",
-- "react-router": "^7.9.4",
-- "react-toastify": "^11.0.5",
-- "tailwindcss": "^4.1.15"
+- tailwindcss/vite: 4.1.15
+- daisyui: 5.3.7
+- firebase: 12.4.0
+- framer-motion: 12.23.24
+- react: 19.1.1
+- react-dom: 19.1.1
+- react-icons: 5.5.0
+- react-router: 7.9.4
+- react-toastify: 11.0.5
+- tailwindcss: 4.1.15
