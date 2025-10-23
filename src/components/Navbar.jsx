@@ -2,7 +2,6 @@ import { Link, NavLink } from "react-router";
 import logo from "/logo.jpg";
 import { use } from "react";
 import { toast } from "react-toastify";
-import { GiHamburgerMenu } from "react-icons/gi";
 import { AuthContext } from "../provider/AuthContext";
 import { motion } from "framer-motion";
 
@@ -28,21 +27,7 @@ const Navbar = () => {
   return (
     <div className="bg-base-100 shadow-sm bg-linear-to-r ">
       <div className="navbar container mx-auto flex-col sm:flex-row gap-4">
-        <div className="navbar-start ">
-          <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-              <GiHamburgerMenu size={32} color="white" />
-            </div>
-            <ul
-              tabIndex="-1"
-              className="menu menu-sm dropdown-content bg-white rounded-box z-1 mt-3 w-52 p-2 shadow"
-            >
-              <NavLink to={"/"}>Home</NavLink>
-              <NavLink to={"/all-games"}>All-Games</NavLink>
-              <NavLink to={"/about"}>About</NavLink>
-            </ul>
-          </div>
-
+        <div className="navbar-start">
           <Link
             to={"/"}
             className="btn btn-ghost bg-none outline-0 border-0 text-white font-bold text-2xl"
@@ -52,23 +37,20 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <div className="navbar-end">
-          <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1 text-lg font-semibold text-white gap-3 mr-3">
-               <motion.div whileHover="hover" whileTap="tap" variants={linkMotion}>
-                <NavLink to={"/"}>Home</NavLink>
-              </motion.div>
-              <motion.div whileHover="hover" whileTap="tap" variants={linkMotion}>
-                <NavLink to={"/all-games"}>All-Games</NavLink>
-              </motion.div>
-              <motion.div whileHover="hover" whileTap="tap" variants={linkMotion}>
-                <NavLink to={"/about"}>About</NavLink>
-              </motion.div>
-            </ul>
-          </div>
-
+        <div className="navbar-end flex-col gap-4 md:flex-row">
+          <ul className="flex flex-wrap justify-center text-lg font-semibold text-white gap-3">
+            <motion.div whileHover="hover" whileTap="tap" variants={linkMotion}>
+              <NavLink to={"/"}>Home</NavLink>
+            </motion.div>
+            <motion.div whileHover="hover" whileTap="tap" variants={linkMotion}>
+              <NavLink to={"/all-games"}>All-Games</NavLink>
+            </motion.div>
+            <motion.div whileHover="hover" whileTap="tap" variants={linkMotion}>
+              <NavLink to={"/about"}>About</NavLink>
+            </motion.div>
+          </ul>
           {user ? (
-            <div className="flex items-center gap-3">
+            <div className="flex items-center justify-center gap-3">
               <Link to={"/my-profile"}>
                 <img
                   className="w-10 rounded-full cursor-pointer hover:scale-110 transition"
@@ -85,7 +67,7 @@ const Navbar = () => {
               </Link>
             </div>
           ) : (
-            <div className="space-x-2">
+            <div className="flex gap-2">
               <Link
                 to={"/auth/login"}
                 className="btn bg-purple-800 text-white rounded-lg text-lg"
