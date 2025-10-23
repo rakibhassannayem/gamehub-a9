@@ -10,7 +10,7 @@ const NewsLatter = () => {
         <p className="text-lg text-gray-300 mt-4 max-w-2/3">
           Subscribe to our newsletter and never miss out on exclusive releases, developer spotlights, and gaming updates.
         </p>
-        <div className="join mt-12 mx-auto flex justify-center">
+        <div className="join mt-12 mx-auto flex gap-2 flex-col sm:flex-row sm:gap-0 justify-center">
           <input
             type="text"
             className="input join-item border border-purple-600 text-lg"

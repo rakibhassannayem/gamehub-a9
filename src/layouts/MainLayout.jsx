@@ -8,9 +8,9 @@ const MainLayout = () => {
   return (
     <div className="bg-gray-900 flex flex-col justify-between min-h-screen p-3">
       <Navbar />
-      <div className="container mx-auto">
+      <main className="container mx-auto">
         {state == "loading" ? <LoadingComp /> : <Outlet />}
-      </div>
+      </main>
       <Footer />
     </div>
   );

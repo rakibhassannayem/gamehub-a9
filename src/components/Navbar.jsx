@@ -20,19 +20,19 @@ const Navbar = () => {
 
   // simple animation variants
   const linkMotion = {
-    hover: { scale: 1.1, color: "#A855F7" }, // purple color when hovered
+    hover: { scale: 1.1, color: "#A855F7" },
     tap: { scale: 0.95 },
   };
 
   return (
-    <div className="bg-base-100 shadow-sm bg-linear-to-r ">
+    <div className="bg-base-100 shadow-sm bg-linear-to-r">
       <div className="navbar container mx-auto flex-col sm:flex-row gap-4">
         <div className="navbar-start">
           <Link
             to={"/"}
             className="btn btn-ghost bg-none outline-0 border-0 text-white font-bold text-2xl"
           >
-            <img className="w-10" src={logo} alt="" />
+            <img className="w-10 rounded-xl" src={logo} alt="" />
             GameHub
           </Link>
         </div>
