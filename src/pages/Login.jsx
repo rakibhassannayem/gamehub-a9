@@ -94,7 +94,7 @@ const Login = () => {
                 </span>
               </div>
 
-              {error && <p className="text-red-500 text-[16px]">{error}</p>}
+              {error && <p className="text-red-500 text-sm">{error}</p>}
 
               <div>
                 <a

@@ -5,8 +5,12 @@ import { IoIosEye, IoIosEyeOff } from "react-icons/io";
 import { AuthContext } from "../provider/AuthContext";
 
 const Register = () => {
-  const { createUserWithEmailAndPasswordFunc, setUser, updateUser } =
-    use(AuthContext);
+  const {
+    createUserWithEmailAndPasswordFunc,
+    setUser,
+    updateUser,
+    signInWithPopupFunc,
+  } = use(AuthContext);
   const [passError, setPassError] = useState("");
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
@@ -49,6 +53,19 @@ const Register = () => {
       .catch((error) => {
         const errorMessage = error.message;
         toast.error(errorMessage);
+      });
+  };
+
+  const handleGoogleSignin = (e) => {
+    e.preventDefault();
+    signInWithPopupFunc()
+      .then(() => {
+        toast.success("Login Successfull.");
+        navigate(`${location.state ? location.state : "/"}`);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        toast.error(errorCode);
       });
   };
 
@@ -103,11 +120,33 @@ const Register = () => {
                 </span>
               </div>
 
-              {passError && <p className="text-red-500">{passError}</p>}
+              {passError && <p className="text-red-500 text-sm">{passError}</p>}
 
-              <button type="submit" className="btn text-xl bg-purple-800 mt-4">
+              <button type="submit" className="btn border-0 rounded-lg text-xl bg-purple-800 mt-4">
                 Register
               </button>
+
+              {/* Divider */}
+              <div className="flex items-center justify-center gap-2 my-2">
+                <div className="h-px w-16 bg-white/30"></div>
+                <span className="text-sm text-white/70">or</span>
+                <div className="h-px w-16 bg-white/30"></div>
+              </div>
+
+              {/* Google Signin */}
+              <button
+                type="button"
+                onClick={handleGoogleSignin}
+                className="btn border-0 flex items-center justify-center gap-3 bg-purple-800 text-white text-[16px] px-5 py-2 rounded-lg w-full font-semibold cursor-pointer"
+              >
+                <img
+                  src="https://www.svgrepo.com/show/475656/google-color.svg"
+                  alt="google"
+                  className="w-5 h-5"
+                />
+                Continue with Google
+              </button>
+
               <p className="mt-3 text-center font-semibold">
                 Already have an account?{" "}
                 <Link
