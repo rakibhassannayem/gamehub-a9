@@ -1,6 +1,6 @@
 # Gamehub - A Game Library
 
-**Purpose:** An engaging online library for discovering and supporting gamers.
+**Purpose:** An engaging online library for discovering and supporting indie game developers.
 
 **Live:** <https://gamehub-7fab1.web.app>
 
