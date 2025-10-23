@@ -53,9 +53,9 @@ const Navbar = () => {
             <div className="flex items-center justify-center gap-3">
               <Link to={"/my-profile"}>
                 <img
-                  className="w-10 rounded-full cursor-pointer hover:scale-110 transition"
+                  className="w-10 rounded-full cursor-pointer hover:scale-110 transition text white"
                   src={user.photoURL}
-                  alt=""
+                  alt="userIcon"
                 />
               </Link>
               <Link
