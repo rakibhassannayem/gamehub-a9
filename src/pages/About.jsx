@@ -1,4 +1,4 @@
-import { motion } from "framer-motion"; // optional — remove if not using
+import { motion } from "framer-motion";
 
 const About = () => {
   return (

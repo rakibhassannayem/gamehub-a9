@@ -18,14 +18,13 @@ const Navbar = () => {
       });
   };
 
-  // simple animation variants
   const linkMotion = {
     hover: { scale: 1.1, color: "#A855F7" },
     tap: { scale: 0.95 },
   };
 
   return (
-    <div className="bg-base-100 shadow-sm bg-linear-to-r">
+    <div className="bg-gray-900 shadow-sm bg-linear-to-r sticky top-0 z-50">
       <div className="navbar container mx-auto flex-col sm:flex-row gap-4">
         <div className="navbar-start">
           <Link
@@ -42,18 +41,25 @@ const Navbar = () => {
             <motion.div whileHover="hover" whileTap="tap" variants={linkMotion}>
               <NavLink to={"/"}>Home</NavLink>
             </motion.div>
+
             <motion.div whileHover="hover" whileTap="tap" variants={linkMotion}>
               <NavLink to={"/all-games"}>All-Games</NavLink>
             </motion.div>
+
             <motion.div whileHover="hover" whileTap="tap" variants={linkMotion}>
               <NavLink to={"/about"}>About</NavLink>
             </motion.div>
+
+            <motion.div whileHover="hover" whileTap="tap" variants={linkMotion}>
+              <NavLink to={"/contact"}>Contact</NavLink>
+            </motion.div>
           </ul>
+
           {user ? (
             <div className="flex items-center justify-center gap-3">
               <Link to={"/my-profile"}>
                 <img
-                  className="w-10 rounded-full cursor-pointer hover:scale-110 transition text white"
+                  className="w-10 rounded-full cursor-pointer hover:scale-110 transition"
                   src={user.photoURL}
                   alt="userIcon"
                 />
@@ -88,5 +94,6 @@ const Navbar = () => {
     </div>
   );
 };
+
 
 export default Navbar;
