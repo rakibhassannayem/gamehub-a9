@@ -6,7 +6,7 @@ const PopularGames = ({ data }) => {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold my-3 text-white">Popular Games</h2>
+      <h2 className="text-4xl font-bold mb-6 text-white text-center">Popular Games</h2>
       <div className="flex flex-col md:flex-row justify-between gap-2 text-white">
         {topRated.map((game) => (
           <GamesCard key={game.id} game={game} />
