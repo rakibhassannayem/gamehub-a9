@@ -1,12 +1,15 @@
 import { FaFacebookF, FaTwitter, FaYoutube } from "react-icons/fa";
 import logo from "/logo.jpg";
+import { Link } from "react-router";
 
 const Footer = () => {
   return (
     <div>
       <footer className="footer sm:footer-horizontal justify-center md:justify-between items-center p-3 container mx-auto text-white">
         <aside className="grid-flow-col items-center">
-          <img className="w-13 rounded-xl" src={logo} alt="" />
+          <Link to={""}>
+            <img className="w-13 rounded-xl" src={logo} alt="" />
+          </Link>
           <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
         </aside>
         <nav className="grid-flow-col gap-4 mx-auto md:place-self-center md:justify-self-end">
