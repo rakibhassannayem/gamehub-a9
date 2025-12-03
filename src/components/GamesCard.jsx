@@ -7,20 +7,25 @@ const GamesCard = ({ game }) => {
   return (
     <Link
       to={`/game-details/${game.id}`}
-      className="card bg-base-100 image-full shadow-sm cursor-pointer group hover:scale-105 transition text-white"
+      className="relative card bg-base-100 image-full shadow-sm cursor-pointer group hover:scale-105 transition text-white"
     >
+      {/* Game Cover */}
       <img
         src={game.coverPhoto}
         alt={game.title}
         className="brightness-50 group-hover:brightness-100 h-full rounded-xl"
       />
 
-      <div className="card-body ">
-        <h2 className="font-bold text-2xl">{game.title}</h2>
-        <p></p>
+      <div className="absolute inset-0 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl">
+        <span className="text-white text-2xl font-semibold">See Details</span>
+      </div>
+
+      <div className="card-body">
+        <h2 className="font-bold text-xl">{game.title}</h2>
+
         <div className="card-actions items-center justify-end">
-          <BiStar size={32} />
-          <span className="text-3xl">{game.ratings}</span>
+          <BiStar size={28} />
+          <span className="text-2xl">{game.ratings}</span>
         </div>
       </div>
     </Link>

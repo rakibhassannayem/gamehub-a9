@@ -4,7 +4,7 @@ import { Link } from "react-router";
 
 const Footer = () => {
   return (
-    <div>
+    <div  className="mt-auto">
       <footer className="footer sm:footer-horizontal justify-center md:justify-between items-center p-3 container mx-auto text-white">
         <aside className="grid-flow-col items-center">
           <Link to={""}>
